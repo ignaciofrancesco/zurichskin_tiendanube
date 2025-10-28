@@ -50,19 +50,16 @@
             {% else %}
                 {% include 'snipplets/home/home-section-switch.tpl' %}
 
-                {# Primer video en loop después del primer slider #}
-                {% if section_select == 'slider' %}
-                    {% set slider_counter = slider_counter + 1 %}
-                    {% if slider_counter == 1 %}
-                        {% include "snipplets/videoloop.tpl" %}
-                    {% endif %}
+                {# Primer video en loop después de la sección de productos destacados #}
+                {% if section_select == 'products' %}
+                    {% include 'snipplets/videoloop.tpl' %}
                 {% endif %}
             {% endif %}
         {% endif %}
     {% endfor %}
 
     {# ---- Incluimos VideoBlog anteúltimo ---- #}
-    {% include "snipplets/videoblog.tpl" %}
+    {# {% include "snipplets/videoblog.tpl" %} #}
 
     {# ---- Renderizamos Newsletter al final ---- #}
     {% if newsletter_section %}

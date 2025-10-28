@@ -1,7 +1,7 @@
 <section class="video-loop-section">
   <div class="container">
-    <h2 class="h5 text-center col-12">+10K HOMBRES YA CONFÍAN</h2>
-    <p class="video-subtitle">en @zurich.skin</p>
+    <h2 class="section-title h5 mb-1 text-center col-12">NUESTROS DEPORTISTAS</h2>
+    <h3 class="video-subtitle">en @zurich.skin</h3>
 
     <div class="video-wrapper">
       <iframe 
@@ -12,8 +12,8 @@
       ></iframe>
     </div>
 
-    <a href="https://instagram.com/zurich.skin" class="btn-video btn btn-primary btn-small" target="_blank">
-      VER EN INSTAGRAM
+    <a href="https://instagram.com/zurich.skin" class="btn-video" target="_blank">
+      Ver en Instagram
     </a>
   </div>
 </section>

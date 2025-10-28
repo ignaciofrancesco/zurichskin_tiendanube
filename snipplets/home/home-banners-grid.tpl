@@ -57,7 +57,7 @@
 {% endif %}
 
 {% set banner_classes = module and not section_slider ? 'mb-md-5 pb-md-3' %}
-{% set banner_title_classes = module ? 'h1 mb-3' : 'h5 mb-0' %}
+{% set banner_title_classes = module ? 'h5 mb-3' : 'h5 mb-0' %}
 {% set banner_description_classes = module ? 'mb-3' : 'textbanner-paragraph' %}
 {% set banner_button_prev_classes = module ? 'ml-3' %}
 {% set banner_button_next_classes = module ? 'mr-3' %}
@@ -98,7 +98,7 @@
                                     <div class="{{ banner_description_classes }}">{{ slide.description }}</div>
                                 {% endif %}
                                 {% if slide.button and slide.link %}
-                                    <div class="btn btn-secondary btn-small mt-2">{{ slide.button }}</div>
+                                    <div class="btn btn-primary btn-small mt-2">{{ slide.button }}</div>
                                 {% endif %}
                                 {% if not module and slide.link %}
                                     <div class="textbanner-arrow">

@@ -108,7 +108,7 @@ window.tiendaNubeInstaTheme = (function(jQueryNuvem) {
 							(aSlide.link ? '<a href="' + aSlide.link + '">' : '' ) +
 								'<img src="' + aSlide.src + '" class="slider-image"/>' +
 								'<div class="swiper-text swiper-' + aSlide.color + '">' +
-									(aSlide.title ? '<div class="h1 mb-3">' + aSlide.title + '</div>' : '' ) +
+									(aSlide.title ? '<div class="mb-3">' + aSlide.title + '</div>' : '' ) +
 									(aSlide.description ? '<p class="mb-3">' + aSlide.description + '</p>' : '' ) +
 									(aSlide.button && aSlide.link ? '<div class="btn btn-secondary btn-small">' + aSlide.button + '</div>' : '' ) +
 								'</div>' +
@@ -169,7 +169,7 @@ window.tiendaNubeInstaTheme = (function(jQueryNuvem) {
 										'<img src="' + aSlide.src + '" class="textbanner-image-effect ' + imageClasses + '">' +
 									'</div>' +
 									(aSlide.title || aSlide.description || aSlide.button ? '<div class="js-textbanner-text textbanner-text ' + (bannerModule ? 'textbanner-module col-md-6 px-3 text-center ' + evenClass : '') + textClasses + '">' : '') +
-										(aSlide.title ? '<div class="' + (bannerModule ? 'h1 mb-3' : 'js-banner-title h5 mb-0') + '">' + aSlide.title + '</div>' : '' ) +
+										(aSlide.title ? '<div class="' + (bannerModule ? 'mb-3' : 'js-banner-title h5 mb-0') + '">' + aSlide.title + '</div>' : '' ) +
 										(aSlide.description ? '<div class="' + (bannerModule ? 'mb-3' : 'textbanner-paragraph') + '">' + aSlide.description + '</div>' : '' ) +
 										(aSlide.button && aSlide.link ? '<div class="btn btn-secondary btn-small mt-2">' + aSlide.button + '</div>' : '' ) +
 									(aSlide.title || aSlide.description || aSlide.button ? '</div>' : '') +
