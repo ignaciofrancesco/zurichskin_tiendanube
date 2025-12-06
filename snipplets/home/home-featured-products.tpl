@@ -4,7 +4,7 @@
 
 {% if has_featured or has_new or has_sale %}
     	{% if has_featured %}
-            <section class="section-featured-home" data-store="home-products-featured">
+            <section class="section-featured-home" style="margin-bottom: 0;" data-store="home-products-featured">
         	    {% include 'snipplets/home/home-featured-grid.tpl' with {'featured_products': true} %}
             </section>
         {% endif %}

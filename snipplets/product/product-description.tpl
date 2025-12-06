@@ -17,7 +17,9 @@
       <div id="reviewsapp"></div>
 
       {# Product share buttons #}
-      {% include 'snipplets/social/social-share.tpl' %}
+      {#
+        {% include 'snipplets/social/social-share.tpl' %}
+      #}
 
     </div>
   </div>

@@ -11,32 +11,40 @@
 {# Product price #}
 
 <div class="price-container mb-3 row" data-store="product-price-{{ product.id }}">
-    <div class="col">
-        {% set price_big_class = settings.payment_discount_price ? 'font-big' %}
-        <span class="d-inline-block {{ price_big_class }}">
-           <div id="compare_price_display" class="js-compare-price-display price-compare" {% if not product.compare_at_price or not product.display_price %}style="display:none;"{% else %} style="display:block;"{% endif %}>{% if product.compare_at_price and product.display_price %}{{ product.compare_at_price | money }}{% endif %}</div>
-        </span>
-        <span class="d-inline-block {{ price_big_class }}">
-        	<div class="js-price-display" id="price_display" {% if not product.display_price %}style="display:none;"{% endif %} data-product-price="{{ product.price }}">{% if product.display_price %}{{ product.price | money }}{% endif %}</div>
-        </span>
+  <div class="col-12">
+    {% set price_big_class = settings.payment_discount_price ? 'font-big' %}
+    <div class="price-row d-flex align-items-baseline">
+      <div id="compare_price_display" class="js-compare-price-display price-compare" {% if not product.compare_at_price or not product.display_price %}style="display:none;"{% else %}style="display:block;"{% endif %}>
+        {% if product.compare_at_price and product.display_price %}{{ product.compare_at_price | money }}{% endif %}
+      </div>
+
+      <div class="js-price-display {{ price_big_class }} ml-1" id="price_display" {% if not product.display_price %}style="display:none;"{% endif %} data-product-price="{{ product.price }}">
+        {% if product.display_price %}{{ product.price | money }}{% endif %}
+      </div>
     </div>
-    {% if settings.product_detail_installments %}
-        <div class="col-auto">
-            {{ component('installments', {'location' : 'product_detail', container_classes: { installment: "item-installments"}}) }}
+
+    <div class="price-meta mt-2">
+      {% if settings.product_detail_installments %}
+        <div class="installments-row">
+          {{ component('installments', {'location' : 'product_detail', container_classes: { installment: "item-installments"}}) }}
         </div>
-    {% endif %}
-    <div class="col-12">
+      {% endif %}
+
+      <div class="transfer-price mt-1">
         {{ component('price-without-taxes', {
-                container_classes: "mt-2 font-small opacity-60",
-            })
-        }}
+          container_classes: "font-small opacity-60",
+        }) }}
+      </div>
+
+      <div class="payment-discount text-accent font-weight-bold mt-1">
         {{ component('payment-discount-price', {
-                visibility_condition: settings.payment_discount_price,
-                location: 'product',
-                container_classes: "mt-2",
-            })
-        }}
+          visibility_condition: settings.payment_discount_price,
+          location: 'product',
+          container_classes: ""
+        }) }}
+      </div>
     </div>
+  </div>
 </div>
 
 <div class="divider"></div>

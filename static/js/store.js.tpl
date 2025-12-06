@@ -2696,10 +2696,9 @@ DOMContentLoaded.addEventOrExecute(() => {
             createSwiper(
                 '.js-swiper-product', {
                     lazy: true,
-                    effect: 'fade',
-                    fadeEffect: {
-                        crossFade: true,
-                    },
+                    effect: 'slide',
+                    centeredSlides: true,   
+                    autoHeight: false,       
                     {% if has_multiple_slides %}
                     slidesPerView: 1,
                     {% endif %}
@@ -2813,6 +2812,28 @@ DOMContentLoaded.addEventOrExecute(() => {
         {% else %}
             productSliderNav()
         {% endif %}
+
+        // Inicializar thumbs (solo si existen en la página)
+        if (document.querySelector('.js-swiper-product-thumbs')) {
+            createSwiper('.js-swiper-product-thumbs', {
+                lazy: true,
+                watchOverflow: true,
+                direction: 'vertical',
+                slidesPerView: 'auto',
+                spaceBetween: 8,
+                navigation: {
+                    nextEl: '.js-swiper-product-thumbs-next',
+                    prevEl: '.js-swiper-product-thumbs-prev',
+                },
+                observer: true,
+                observeParents: true,
+                on: {
+                    afterInit: function () {
+                        hideSwiperControls('.js-swiper-product-thumbs-prev', '.js-swiper-product-thumbs-next');
+                    }
+                },
+            });
+        }
 
         {# /* // Pinterest sharing */ #}
 
@@ -3632,10 +3653,7 @@ DOMContentLoaded.addEventOrExecute(() => {
             lazy: true,
             loop: true,
             centeredSlides: true,
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true,
-            },
+            effect: 'slide',
             pagination: {
                 el: '.js-swiper-product-pagination-demo',
                 clickable: true,

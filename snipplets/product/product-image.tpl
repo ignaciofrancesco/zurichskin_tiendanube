@@ -57,32 +57,5 @@
     {% endif %}
 </div>
 <script>
-window.addEventListener('load', function () {
-    if (typeof Swiper !== 'undefined') {
-
-        var thumbsSwiper = new Swiper('.js-swiper-product-thumbs', {
-            slidesPerView: 'auto',
-            spaceBetween: 10,
-            direction: 'vertical',
-            watchSlidesProgress: true,
-        });
-
-        // Esperar un pequeño retardo para asegurar carga completa
-        setTimeout(function() {
-            var productSwiper = new Swiper('.js-swiper-product', {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                loop: false,
-                pagination: {
-                    el: '.js-swiper-product-pagination',
-                    clickable: true,
-                },
-                thumbs: {
-                    swiper: thumbsSwiper,
-                },
-            });
-        }, 300);
-    }
-});
 </script>
 

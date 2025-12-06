@@ -31,10 +31,6 @@
 {% endif %}
 
 {% set newArray = [] %}
-{% set slider_counter = 0 %} {# Contador de sliders reales #}
-
-{# Flag para detectar Newsletter y separar su renderizado #}
-{% set newsletter_section = null %}
 
 <div class="js-home-sections-container home-sections-container">
     {% for i in 1..18 %}
@@ -44,27 +40,15 @@
         {% if section_select not in newArray %}
             {% set newArray = newArray|merge([section_select]) %}
 
-            {# Guardamos la sección Newsletter para renderizarla al final #}
-            {% if section_select == 'newsletter' %}
-                {% set newsletter_section = section_select %}
-            {% else %}
                 {% include 'snipplets/home/home-section-switch.tpl' %}
 
-                {# Primer video en loop después de la sección de productos destacados #}
-                {% if section_select == 'products' %}
+                {# Colocar video loop justo luego del form de newsletter #}
+                {% if section_select == 'newsletter' %}
                     {% include 'snipplets/videoloop.tpl' %}
                 {% endif %}
-            {% endif %}
         {% endif %}
     {% endfor %}
 
-    {# ---- Incluimos VideoBlog anteúltimo ---- #}
-    {# {% include "snipplets/videoblog.tpl" %} #}
-
-    {# ---- Renderizamos Newsletter al final ---- #}
-    {% if newsletter_section %}
-        {% include 'snipplets/home/home-section-switch.tpl' with {'section_select': newsletter_section} %}
-    {% endif %}
 
     {#  **** Hidden Sections ****  #}
     {% if show_component_help %}
