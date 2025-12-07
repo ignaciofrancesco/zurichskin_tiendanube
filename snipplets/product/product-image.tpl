@@ -41,7 +41,7 @@
                             <a href="{{ media | product_image_url('original') }}" 
                                data-fancybox="product-gallery" 
                                class="js-product-slide-link d-block position-relative product-slide-fixed">
-                                <img src="{{ media | product_image_url('large') }}"
+                                <img src="{{ media | product_image_url('original') }}"
                                      alt="{{ media.alt }}"
                                      class="js-product-slide-img product-slider-image">
                             </a>
